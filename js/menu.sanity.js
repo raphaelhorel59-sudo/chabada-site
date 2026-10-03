@@ -26,14 +26,32 @@
     );
   }
 
+  function useStaticMenu() {
+    return /github\.io$/i.test(window.location.hostname);
+  }
+
+  function getStaticDishes(category, service) {
+    const root = window.CHABADA_STATIC_MENU;
+    if (!root || !root[service]) return [];
+    const list = root[service][category];
+    return Array.isArray(list) ? list : [];
+  }
+
   async function fetchDishes(category, service) {
+    if (useStaticMenu()) return getStaticDishes(category, service);
+
     const query = groqForCategory(category, service);
     const base = `https://${SANITY_PROJECT_ID}.apicdn.sanity.io/v${API_VERSION}/data/query/${SANITY_DATASET}`;
     const url = `${base}?query=${encodeURIComponent(query)}`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Sanity HTTP ${res.status}`);
-    const json = await res.json();
-    return Array.isArray(json.result) ? json.result : [];
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Sanity HTTP ${res.status}`);
+      const json = await res.json();
+      return Array.isArray(json.result) ? json.result : [];
+    } catch (err) {
+      console.warn("[CHABADA menu] Sanity indisponible, menu statique.", err);
+      return getStaticDishes(category, service);
+    }
   }
 
   function formatAllergensLabel(text) {
@@ -187,33 +205,22 @@
         if (!container) return;
         const cacheKey = currentService + ":" + cat;
 
-        try {
-          const dishes = await fetchDishes(cat, currentService);
-          DISH_CACHE[cacheKey] = dishes;
-          container.innerHTML = "";
-          if (dishes.length === 0) {
-            const p = document.createElement("p");
-            p.className = "menu-empty";
-            p.textContent =
-              cat === "formules"
-                ? "Aucune formule pour ce service."
-                : "Aucun plat dans cette catégorie pour le moment.";
-            container.appendChild(p);
-            return;
-          }
-          dishes.forEach(function (dish) {
-            container.appendChild(renderDish(dish));
-          });
-        } catch (err) {
-          console.error("[CHABADA menu]", cat, err);
-          DISH_CACHE[cacheKey] = [];
-          container.innerHTML = "";
+        const dishes = await fetchDishes(cat, currentService);
+        DISH_CACHE[cacheKey] = dishes;
+        container.innerHTML = "";
+        if (dishes.length === 0) {
           const p = document.createElement("p");
           p.className = "menu-empty";
           p.textContent =
-            "Impossible de charger le menu. Vérifiez les origines CORS dans Sanity (voir SANITY-CORS.md).";
+            cat === "formules"
+              ? "Aucune formule pour ce service."
+              : "Aucun plat dans cette catégorie pour le moment.";
           container.appendChild(p);
+          return;
         }
+        dishes.forEach(function (dish) {
+          container.appendChild(renderDish(dish));
+        });
       })
     );
   }
