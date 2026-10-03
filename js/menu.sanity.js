@@ -26,10 +26,6 @@
     );
   }
 
-  function useStaticMenu() {
-    return /github\.io$/i.test(window.location.hostname);
-  }
-
   function getStaticDishes(category, service) {
     const root = window.CHABADA_STATIC_MENU;
     if (!root || !root[service]) return [];
@@ -37,8 +33,12 @@
     return Array.isArray(list) ? list : [];
   }
 
+  // Démo: menu en dur. Remettre Sanity plus tard avec ?sanity=1 ou en retirant le static.
   async function fetchDishes(category, service) {
-    if (useStaticMenu()) return getStaticDishes(category, service);
+    const wantSanity = new URLSearchParams(window.location.search).get("sanity") === "1";
+    if (!wantSanity && window.CHABADA_STATIC_MENU) {
+      return getStaticDishes(category, service);
+    }
 
     const query = groqForCategory(category, service);
     const base = `https://${SANITY_PROJECT_ID}.apicdn.sanity.io/v${API_VERSION}/data/query/${SANITY_DATASET}`;
