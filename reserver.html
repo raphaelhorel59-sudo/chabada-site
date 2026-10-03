@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Réserver — CHABADA · Lille</title>
+<meta name="description" content="Réservez votre table au CHABADA, Lille, via Zenchef." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="favicon.png" />
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="brand-badge" src="logo.png" alt="CHABADA — Les sens de la fête" /></a>
+    <nav><ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="carte.html">Menu</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="avis.html">Avis</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <div class="nav-right"><a href="https://bookings.zenchef.com/results?rid=385591" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Réserver</a></div>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="wrap reserve-wrap">
+  <div class="reserve-card reveal in">
+    <img class="badge-lg" src="logo.png" alt="CHABADA" />
+    <h2>Réserver une table</h2>
+    <p class="section-lead" style="margin:0 0 28px;">Choisissez votre date et votre horaire en ligne, via Zenchef.</p>
+    <a class="btn btn-primary btn-block btn-lg" href="https://bookings.zenchef.com/results?rid=385591" target="_blank" rel="noopener noreferrer">Ouvrir la réservation</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-main">
+    <div class="about">
+      <img class="badge-sm" src="logo.png" alt="CHABADA" />
+      <p>Une destination sensorielle au cœur de Lille. Haute cuisine, mixologie d'exception et nuits vibrantes.</p>
+      <div class="addr">📍 39 Rue de Gand, 59800 Lille</div>
+    </div>
+    <div class="fcol"><h5>Explorer</h5><ul><li><a href="index.html">Accueil</a></li><li><a href="carte.html">La Carte</a></li><li><a href="carte.html?tab=cocktails">Cocktails</a></li><li><a href="galerie.html">Galerie</a></li></ul></div>
+    <div class="fcol"><h5>Suivre</h5><ul>
+      <li><a href="https://www.instagram.com/chabada.lille?igsh=djIyaG9nZ2I1MGZv" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://share.google/hMv1XoTxmGASfq7OC" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+    </ul></div>
+    <div class="fcol"><h5>Réserver</h5><div class="phone"><a href="tel:+33320000000">+33 3 20 00 00 00</a></div><div class="phone"><a href="mailto:contact@chabada-lille.fr">contact@chabada-lille.fr</a></div><a href="https://bookings.zenchef.com/results?rid=385591" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Réserver en ligne</a></div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 CHABADA — Tous droits réservés</span>
+    <span><a href="mentions-legales.html">Mentions Légales</a> &nbsp; <a href="mentions-legales.html#donnees-personnelles">Politique de Confidentialité</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<div class="zc-widget-config" data-restaurant="385591" data-lang="fr" data-position="right" data-hide-default-button="true" data-auto-open="false" data-open-delay="0" aria-hidden="true"></div>
+<div class="zenchef-reserve-anchor">
+  <a class="zenchef-fab zenchef-fab--fixed" href="#" role="button" aria-label="Réserver une table — cliquer pour ouvrir">
+    <span class="zenchef-fab__text">Réserver une table</span>
+    <span class="zenchef-fab__divider" aria-hidden="true"></span>
+    <span class="zenchef-fab__icon" aria-hidden="true">Z</span>
+  </a>
+</div>
+<script src="js/zenchef-reserve.js"></script>
+</body>
+</html>
