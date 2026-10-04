@@ -6,10 +6,10 @@
   const SANITY_CATEGORIES = ["formules", "entrees", "plats", "desserts", "cocktails"];
   const DISH_CACHE = Object.create(null);
   const FALLBACK_IMAGES = {
-    formules: { src: "images/table-burger.jpg", title: "Formules" },
-    entrees: { src: "images/croquettes.jpg", title: "Entrées" },
-    plats: { src: "images/plat-poulet.jpg", title: "Plats" },
-    desserts: { src: "images/vins.jpg", title: "Desserts" },
+    formules: { src: "images/table-assiettes.jpg", title: "Formules" },
+    entrees: { src: "images/roule-betteraves.jpg", title: "Entrées" },
+    plats: { src: "images/burger-frites.jpg", title: "Plats" },
+    desserts: { src: "images/mousse-speculoos.jpg", title: "Desserts" },
     cocktails: { src: "images/cocktails.jpg", title: "Cocktails" },
   };
 

@@ -1,156 +1,52 @@
 {
   "midi": {
     "formules": [
-      {
-        "name": "Menu entrée + plat ou plat + dessert",
-        "price": 22
-      },
-      {
-        "name": "Menu entrée + plat + dessert",
-        "price": 25
-      }
+      { "name": "Menu entrée + plat ou plat + dessert", "price": 22 },
+      { "name": "Menu entrée + plat + dessert", "price": 25 }
     ],
     "entrees": [
-      {
-        "name": "Rillette de saumon à la sauge",
-        "price": 7
-      },
-      {
-        "name": "Roulé de betteraves chèvre miel et noix",
-        "price": 7
-      },
-      {
-        "name": "Oeuf parfait façon meurette",
-        "description": "Sauce au vin et lard fumé",
-        "price": 6
-      }
+      { "name": "Rillette de saumon à la sauge", "price": 7, "imageUrl": "images/saumon-crevettes.jpg" },
+      { "name": "Roulé de betteraves chèvre miel et noix", "price": 7, "imageUrl": "images/roule-betteraves.jpg" },
+      { "name": "Oeuf parfait façon meurette", "description": "Sauce au vin et lard fumé", "price": 6, "imageUrl": "images/oeuf-meurette.jpg" }
     ],
     "plats": [
-      {
-        "name": "Cheeseburger « CHABADA »",
-        "description": "Servi avec frites / salades",
-        "price": 16
-      },
-      {
-        "name": "Tartare de bœuf",
-        "description": "Servi avec frites / salades",
-        "price": 17
-      },
-      {
-        "name": "Poulet Maroilles",
-        "price": 17.5
-      },
-      {
-        "name": "Carbonnade flamande",
-        "price": 18.5
-      },
-      {
-        "name": "Salade César",
-        "price": 19
-      },
-      {
-        "name": "Boulgour, légumes grillés et féta",
-        "description": "Poivrons rouges et jaunes, courgettes, panais et tomates confites",
-        "price": 18
-      }
+      { "name": "Cheeseburger « CHABADA »", "description": "Servi avec frites / salades", "price": 16, "imageUrl": "images/burger-frites.jpg" },
+      { "name": "Tartare de bœuf", "description": "Servi avec frites / salades", "price": 17, "imageUrl": "images/tartare-boeuf.jpg" },
+      { "name": "Poulet Maroilles", "price": 17.5, "imageUrl": "images/poulet-salade.jpg" },
+      { "name": "Carbonnade flamande", "price": 18.5 },
+      { "name": "Salade César", "price": 19 },
+      { "name": "Boulgour, légumes grillés et féta", "description": "Poivrons rouges et jaunes, courgettes, panais et tomates confites", "price": 18, "imageUrl": "images/plat-legumes.jpg" }
     ],
     "desserts": [
-      {
-        "name": "Dame blanche ou noire",
-        "description": "Avec boule de glace vanille",
-        "price": 6
-      },
-      {
-        "name": "Tarte au suc à l'bière",
-        "price": 6
-      },
-      {
-        "name": "Café ou thé gourmand",
-        "price": 9
-      }
+      { "name": "Dame blanche ou noire", "description": "Avec boule de glace vanille", "price": 6, "imageUrl": "images/dessert-glace.jpg" },
+      { "name": "Tarte au suc à l'bière", "price": 6 },
+      { "name": "Café ou thé gourmand", "price": 9 }
     ],
     "cocktails": []
   },
   "soir": {
     "formules": [],
     "entrees": [
-      {
-        "name": "Croquettes de canard confit",
-        "description": "Croquettes croustillantes de cuisses de canard confites, mayonnaise au pimentón fumé et miel, germes de soja, roquette et vinaigrette citron vert–menthe",
-        "price": 12
-      },
-      {
-        "name": "Soupe à l'oignon",
-        "description": "Gratiné à l'emmental avec son oeuf parfait",
-        "price": 8
-      },
-      {
-        "name": "Tartare aux deux saumons",
-        "description": "Saumon frais et saumon gravelax — sésame et cebette, pignons de pain grillés",
-        "price": 11
-      }
+      { "name": "Croquettes de canard confit", "description": "Croquettes croustillantes de cuisses de canard confites, mayonnaise au pimentón fumé et miel, germes de soja, roquette et vinaigrette citron vert–menthe", "price": 12, "imageUrl": "images/croquettes.jpg" },
+      { "name": "Soupe à l'oignon", "description": "Gratiné à l'emmental avec son oeuf parfait", "price": 8, "imageUrl": "images/bol-oeuf-vin.jpg" },
+      { "name": "Tartare aux deux saumons", "description": "Saumon frais et saumon gravelax — sésame et cebette, pignons de pain grillés", "price": 11, "imageUrl": "images/saumon-crevettes.jpg" }
     ],
     "plats": [
-      {
-        "name": "Poitrine de porc confite",
-        "description": "Laqué soja - miel",
-        "price": 24
-      },
-      {
-        "name": "Boulgour, légumes sautés",
-        "description": "Poivrons rouges et jaunes, courgettes, panais et tomates confites",
-        "price": 18
-      },
-      {
-        "name": "Burger « CHABADA »",
-        "description": "Maroilles, lard fumé grillé et oignons confits miel balsamique",
-        "price": 18
-      },
-      {
-        "name": "Poulet Maroilles",
-        "price": 17.5
-      },
-      {
-        "name": "Carbonnade flamande",
-        "price": 18.5
-      },
-      {
-        "name": "Salade César « CHABADA »",
-        "description": "Salade romaine et iceberg, tenders croustillants maison, pickles d'oignons rouges, croûtons au beurre d'ail et au thym citron, sauce César au miel",
-        "price": 19
-      },
-      {
-        "name": "Pièce du boucher",
-        "description": "Accompagnement au choix : frites / salade, riz ou légumes de saison",
-        "priceLabel": "Prix selon l'arrivage"
-      },
-      {
-        "name": "Pêche du jour",
-        "description": "Accompagnement au choix : frites / salade, riz ou légumes de saison",
-        "priceLabel": "Prix selon l'arrivage"
-      }
+      { "name": "Poitrine de porc confite", "description": "Laqué soja - miel", "price": 24 },
+      { "name": "Boulgour, légumes sautés", "description": "Poivrons rouges et jaunes, courgettes, panais et tomates confites", "price": 18, "imageUrl": "images/plat-legumes.jpg" },
+      { "name": "Burger « CHABADA »", "description": "Maroilles, lard fumé grillé et oignons confits miel balsamique", "price": 18, "imageUrl": "images/burger-frites.jpg" },
+      { "name": "Poulet Maroilles", "price": 17.5, "imageUrl": "images/poulet-salade.jpg" },
+      { "name": "Carbonnade flamande", "price": 18.5 },
+      { "name": "Salade César « CHABADA »", "description": "Salade romaine et iceberg, tenders croustillants maison, pickles d'oignons rouges, croûtons au beurre d'ail et au thym citron, sauce César au miel", "price": 19 },
+      { "name": "Pièce du boucher", "description": "Accompagnement au choix : frites / salade, riz ou légumes de saison", "priceLabel": "Prix selon l'arrivage" },
+      { "name": "Pêche du jour", "description": "Accompagnement au choix : frites / salade, riz ou légumes de saison", "priceLabel": "Prix selon l'arrivage", "imageUrl": "images/peche-cuisine.jpg" }
     ],
     "desserts": [
-      {
-        "name": "Mousse spéculoos / cumbava",
-        "price": 9
-      },
-      {
-        "name": "Tarte framboise / amande",
-        "price": 8
-      },
-      {
-        "name": "Moelleux chocolat / cacahuetes",
-        "price": 9
-      },
-      {
-        "name": "Assiette de fromage",
-        "price": 12
-      },
-      {
-        "name": "Café ou thé gourmand",
-        "price": 9
-      }
+      { "name": "Mousse spéculoos / cumbava", "price": 9, "imageUrl": "images/mousse-speculoos.jpg" },
+      { "name": "Tarte framboise / amande", "price": 8 },
+      { "name": "Moelleux chocolat / cacahuetes", "price": 9 },
+      { "name": "Assiette de fromage", "price": 12 },
+      { "name": "Café ou thé gourmand", "price": 9 }
     ],
     "cocktails": []
   }
