@@ -479,3 +479,58 @@ html:not(.zc-user-opened) iframe[src*="bookings.zenchef"] {
   .zenchef-fab__icon { width: 46px; font-size: 26px; }
   .zenchef-fab__text { padding: 0 14px 0 12px; font-size: 14px; }
 }
+
+/* ---------- Accueil : Restaurant / Bar ---------- */
+.split-hero { position: relative; display: flex; margin-top: 24px; height: calc(100svh - var(--nav-h) - 48px); min-height: 520px; max-height: 760px; color: #fff; }
+.split-half { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; transition: flex .5s ease; }
+.split-half + .split-half { border-left: 1px solid rgba(255,255,255,.25); }
+.split-half img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+.split-half::after { content: ""; position: absolute; inset: 0; background: rgba(10,8,6,.5); }
+.split-half:hover { flex: 1.25; }
+.split-half:hover img { transform: scale(1.04); }
+.split-body { position: relative; z-index: 2; padding: 250px 30px 40px; display: grid; gap: 8px; justify-items: center; }
+.split-label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: #f0c987; font-weight: 600; }
+.split-body h2 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.1; }
+.split-body p { font-size: .92rem; color: rgba(255,255,255,.82); }
+.split-link { margin-top: 8px; font-family: var(--font-serif); font-size: 1.05rem; padding-bottom: 3px; border-bottom: 2px solid var(--amber); }
+.split-tagline { position: absolute; z-index: 3; top: 30px; left: 0; right: 0; text-align: center; pointer-events: none; }
+.split-tagline .script-mark { display: block; padding-top: .15em; font-family: "Monsieur La Doulaise", cursive; font-weight: 400; font-size: clamp(4.5rem, 9vw, 7.5rem); line-height: 1; color: #f0c987; text-shadow: 0 2px 18px rgba(0,0,0,.35); }
+.split-tagline h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-top: -6px; }
+@media (max-width: 900px) {
+  .split-hero { flex-direction: column; height: auto; max-height: none; min-height: 0; }
+  .split-tagline { position: relative; top: auto; background: var(--ink); padding: 28px 20px 24px; }
+  .split-tagline .script-mark { font-size: 4.2rem; }
+  .split-half { min-height: 300px; }
+  .split-half + .split-half { border-left: 0; border-top: 1px solid rgba(255,255,255,.25); }
+  .split-half:hover { flex: 1; }
+  .split-body { padding: 40px 24px; }
+}
+
+/* ---------- Page Bar ---------- */
+.bar-hero { position: relative; margin-top: 24px; height: min(62svh, 560px); min-height: 380px; display: flex; align-items: flex-end; color: #fff; }
+.bar-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.bar-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,8,6,.2) 30%, rgba(10,8,6,.8) 100%); }
+.bar-hero-inner { position: relative; z-index: 2; padding: 44px 48px; max-width: 640px; }
+.bar-hero .script-mark { font-family: var(--font-script); font-size: 2.6rem; color: #f0c987; display: block; line-height: 1.1; }
+.bar-hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 4px 0 12px; }
+.bar-hero p { color: rgba(255,255,255,.85); }
+.bar-intro { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: end; max-width: 920px; margin: 0 auto; }
+.bar-intro .eyebrow { display: block; margin-bottom: 12px; }
+.bar-intro .section-lead { margin: 0; }
+.bar-carte .section-head { margin-bottom: 34px; }
+.bar-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; max-width: 920px; margin: 0 auto; }
+.bar-cat { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 500; margin: 28px 0 6px; padding-bottom: 8px; border-bottom: 2px solid var(--amber); display: inline-block; }
+.bar-cols > div > .bar-cat:first-child { margin-top: 0; }
+.bar-item { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line-soft); color: var(--ink-soft); }
+.bar-photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.bar-photos img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius); }
+.bar-infos { max-width: 920px; margin: 0 auto; }
+.bar-p { color: var(--ink-soft); font-size: .95rem; margin-bottom: 18px; }
+.bar-links { display: grid; gap: 8px; }
+.bar-links a { font-family: var(--font-serif); font-size: 1.1rem; justify-self: start; border-bottom: 2px solid var(--amber); }
+.bar-links a:hover { color: var(--amber); }
+@media (max-width: 900px) {
+  .bar-intro, .bar-cols { grid-template-columns: 1fr; gap: 24px; }
+  .bar-photos { grid-template-columns: 1fr 1fr; }
+  .bar-hero-inner { padding: 28px 24px; }
+}

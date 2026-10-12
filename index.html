@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CHABADA — Bar · Restaurant · Cocktails · Lille</title>
-<meta name="description" content="CHABADA — Les sens de la fête. Bar, restaurant et cocktails au cœur de Lille. Haute cuisine, mixologie d'exception et nuits vibrantes." />
+<title>CHABADA — Restaurant &amp; Bar · Lille</title>
+<meta name="description" content="CHABADA, restaurant et bar au 39 rue de Gand à Lille : cuisine de saison le midi et le soir, soirées et DJ sets jusqu'à 2h." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Great+Vibes&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=bar1" />
 <link rel="icon" href="favicon.png" />
 </head>
 <body>
@@ -22,6 +22,7 @@
       <ul class="nav-links">
         <li><a href="index.html" class="active">Accueil</a></li>
         <li><a href="carte.html">Menu</a></li>
+        <li><a href="bar.html">Bar</a></li>
         <li><a href="galerie.html">Galerie</a></li>
         <li><a href="avis.html">Avis</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -35,18 +36,31 @@
 </header>
 
 <section class="wrap">
-  <div class="hero rounded-section">
-    <div class="hero-media">
-      <img src="images/hero.jpg" alt="Soirée au Chabada : menu, plats et cocktails" />
-    </div>
-    <div class="hero-inner">
+  <div class="split-hero rounded-section">
+    <div class="split-tagline">
       <span class="script-mark">Chabada</span>
-      <h1 class="display">Les sens de la fête.</h1>
-      <a href="carte.html" class="btn btn-ghost btn-lg">Découvrir la carte</a>
+      <h1 class="display">Les sens de la fête</h1>
     </div>
+    <a class="split-half" href="carte.html">
+      <img src="images/table-burger.jpg" alt="Table du restaurant Chabada" />
+      <div class="split-body">
+        <span class="split-label">Le Restaurant</span>
+        <h2>Cuisine de saison</h2>
+        <p>Midi du mercredi au dimanche · Soir du mardi au samedi</p>
+        <span class="split-link">Voir la carte</span>
+      </div>
+    </a>
+    <a class="split-half" href="bar.html">
+      <img src="images/bartender.jpg" alt="Soirée au bar du Chabada" />
+      <div class="split-body">
+        <span class="split-label">Le Bar</span>
+        <h2>Soirées &amp; DJ sets</h2>
+        <p>Dès 18h · Jusqu'à 2h du jeudi au samedi</p>
+        <span class="split-link">Découvrir le bar</span>
+      </div>
+    </a>
   </div>
 </section>
-
 <section class="section wrap infos">
   <div class="section-head center reveal">
     <h2 class="display">Infos Pratiques</h2>
@@ -58,34 +72,38 @@
         <ul class="info-list">
           <li><span class="ico" aria-hidden="true"></span> Terrasse</li>
           <li><span class="ico" aria-hidden="true"></span> Privatisation</li>
-          <li><span class="ico" aria-hidden="true"></span> DJ Sets</li>
+          <li><span class="ico" aria-hidden="true"></span> Soirées &amp; DJ sets</li>
         </ul>
         <ul class="info-list">
-          <li><span class="ico" aria-hidden="true"></span> Cocktails Signature</li>
-          <li><span class="ico" aria-hidden="true"></span> Wi-Fi</li>
-          <li><span class="ico" aria-hidden="true"></span> Online Booking</li>
+          <li><span class="ico" aria-hidden="true"></span> Cocktail signature</li>
+          <li><span class="ico" aria-hidden="true"></span> Planches apéro</li>
+          <li><span class="ico" aria-hidden="true"></span> Réservation en ligne</li>
         </ul>
       </div>
     </div>
     <div class="panel panel-2 reveal">
-      <h3>Horaires <span class="status-open">● Ouvert actuellement</span></h3>
-      <div class="hours-row"><span class="day">Lun–Jeu</span><span>12h–14h30, 19h–23h</span></div>
-      <div class="hours-row"><span class="day">Ven–Sam</span><span>12h–14h30, 19h–01h</span></div>
-      <div class="hours-row"><span class="day">Dim</span><span>Brunch 12h–16h</span></div>
+      <h3>Horaires</h3>
+      <div class="hours-row"><span class="day">Lundi</span><span>Fermé</span></div>
+      <div class="hours-row"><span class="day">Mardi</span><span>18h–23h</span></div>
+      <div class="hours-row"><span class="day">Mercredi</span><span>12h–14h30 · 18h–01h</span></div>
+      <div class="hours-row"><span class="day">Jeudi</span><span>12h–14h30 · 18h–02h</span></div>
+      <div class="hours-row"><span class="day">Vendredi</span><span>12h–14h30 · 18h–02h</span></div>
+      <div class="hours-row"><span class="day">Samedi</span><span>12h–02h</span></div>
+      <div class="hours-row"><span class="day">Dimanche</span><span>12h–15h</span></div>
     </div>
   </div>
 </section>
 
 <section class="section wrap">
   <div class="section-head center reveal">
-    <h2 class="display">Notre Carte</h2>
-    <p class="section-lead">Une sélection raffinée mêlant tradition française et audace contemporaine, pensée pour éveiller tous les sens.</p>
+    <h2 class="display">À la carte</h2>
+    <p class="section-lead">Le midi, le soir ou pour l'apéro : une cuisine de saison et un bar pour prolonger la soirée.</p>
   </div>
   <div class="carte-grid reveal">
     <a class="carte-card" href="carte.html?tab=entrees"><img src="images/croquettes.jpg" alt="Entrées" loading="lazy"><span>Entrées</span></a>
     <a class="carte-card" href="carte.html?tab=plats"><img src="images/plat-poulet.jpg" alt="Plats" loading="lazy"><span>Plats</span></a>
-    <a class="carte-card" href="carte.html?tab=cocktails"><img src="images/cocktails.jpg" alt="Cocktail préparé au bar" loading="lazy"><span>Cocktails</span></a>
-    <a class="carte-card" href="carte.html?tab=desserts"><img src="images/vins.jpg" alt="Desserts" loading="lazy"><span>Desserts</span></a>
+    <a class="carte-card" href="carte.html?service=midi"><img src="images/dressage.jpg" alt="Menu du midi" loading="lazy"><span>Menu midi</span></a>
+    <a class="carte-card" href="bar.html"><img src="images/cocktails.jpg" alt="Le bar du Chabada" loading="lazy"><span>Le Bar</span></a>
   </div>
   <div style="text-align:center;margin-top:36px;" class="reveal">
     <a href="carte.html" class="btn btn-ghost">Découvrir le menu</a>
@@ -131,10 +149,10 @@
   <div class="wrap footer-main">
     <div class="about">
       <img class="badge-sm" src="logo.png" alt="CHABADA" />
-      <p>Une destination sensorielle au cœur de Lille. Haute cuisine, mixologie d'exception et nuits vibrantes.</p>
+      <p>Restaurant, bar et soirées au cœur de Lille, rue de Gand.</p>
       <div class="addr">📍 39 Rue de Gand, 59800 Lille</div>
     </div>
-    <div class="fcol"><h5>Explorer</h5><ul><li><a href="index.html">Accueil</a></li><li><a href="carte.html">La Carte</a></li><li><a href="carte.html?tab=cocktails">Cocktails</a></li><li><a href="galerie.html">Galerie</a></li></ul></div>
+    <div class="fcol"><h5>Explorer</h5><ul><li><a href="index.html">Accueil</a></li><li><a href="carte.html">La Carte</a></li><li><a href="bar.html">Le Bar</a></li><li><a href="galerie.html">Galerie</a></li></ul></div>
     <div class="fcol"><h5>Suivre</h5><ul>
       <li><a href="https://www.instagram.com/chabada.lille?igsh=djIyaG9nZ2I1MGZv" target="_blank" rel="noopener noreferrer">Instagram</a></li>
       <li><a href="https://share.google/hMv1XoTxmGASfq7OC" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
