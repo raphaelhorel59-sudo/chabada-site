@@ -522,10 +522,11 @@ html:not(.zc-user-opened) iframe[src*="bookings.zenchef"] {
 .bar2-hero-links { display: flex; justify-content: center; gap: 28px; margin-top: 22px; }
 .bar2-hero-links a, .bar2-link { font-family: var(--font-serif); font-size: 1.1rem; padding-bottom: 3px; border-bottom: 2px solid var(--amber); }
 .bar2-hero-links a:hover, .bar2-link:hover { color: var(--amber); }
-.bar2-intro { max-width: 640px; margin: 0 auto; text-align: center; }
+.bar2-intro { max-width: 720px; margin: 0 auto; text-align: center; }
 .bar2-intro .eyebrow { display: block; margin-bottom: 12px; }
 .bar2-intro h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
-.bar2-intro p { color: var(--muted); margin-top: 16px; }
+.bar2-intro p { color: var(--muted); margin-top: 14px; }
+.bar2-intro .bar2-sign { margin-top: 22px; font-family: var(--font-serif); font-size: 1.25rem; color: var(--ink); }
 .bar2-menu { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1px 1fr; gap: 40px; text-align: center; padding: 44px 36px; }
 .bar2-menu-sep { background: var(--line); }
 .bar2-menu h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; display: inline-block; padding-bottom: 6px; border-bottom: 2px solid var(--amber); margin-bottom: 18px; }
