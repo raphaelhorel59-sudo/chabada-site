@@ -22,7 +22,7 @@
       category +
       '" && coalesce(available, true) == true && ("' +
       service +
-      '" in coalesce(service, ["soir"]))] | order(coalesce(sortOrder, 9999) asc, name asc) { _id, name, description, price, priceLabel, allergens, "imageUrl": image.asset->url }'
+      '" in coalesce(service, ["soir"]))] | order(coalesce(sortOrder, 9999) asc, name asc) { _id, name, description, price, priceLabel, allergens, "imageUrl": image.asset->url + "?w=1000&fit=max&auto=format" }'
     );
   }
 
@@ -33,10 +33,11 @@
     return Array.isArray(list) ? list : [];
   }
 
-  // Démo: menu en dur. Remettre Sanity plus tard avec ?sanity=1 ou en retirant le static.
+  // Sanity est la source de la carte ; le menu en dur (menu.static.js) sert de secours,
+  // ou peut être forcé avec ?static=1.
   async function fetchDishes(category, service) {
-    const wantSanity = new URLSearchParams(window.location.search).get("sanity") === "1";
-    if (!wantSanity && window.CHABADA_STATIC_MENU) {
+    const forceStatic = new URLSearchParams(window.location.search).get("static") === "1";
+    if (forceStatic && window.CHABADA_STATIC_MENU) {
       return getStaticDishes(category, service);
     }
 
