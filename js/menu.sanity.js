@@ -33,6 +33,19 @@
     return Array.isArray(list) ? list : [];
   }
 
+  // Plat sans photo dans Sanity : on reprend la photo du site (menu en dur) s'il y en a une.
+  // Une photo ajoutée dans Sanity reste prioritaire.
+  function withLocalImage(dish) {
+    if (dish.imageUrl || !window.CHABADA_STATIC_MENU) return dish;
+    for (const service of Object.values(window.CHABADA_STATIC_MENU)) {
+      for (const list of Object.values(service || {})) {
+        const match = (list || []).find((d) => d.name === dish.name && d.imageUrl);
+        if (match) return Object.assign({}, dish, { imageUrl: match.imageUrl });
+      }
+    }
+    return dish;
+  }
+
   // Sanity est la source de la carte ; le menu en dur (menu.static.js) sert de secours,
   // ou peut être forcé avec ?static=1.
   async function fetchDishes(category, service) {
@@ -48,7 +61,7 @@
       const res = await fetch(url);
       if (!res.ok) throw new Error(`Sanity HTTP ${res.status}`);
       const json = await res.json();
-      return Array.isArray(json.result) ? json.result : [];
+      return Array.isArray(json.result) ? json.result.map(withLocalImage) : [];
     } catch (err) {
       console.warn("[CHABADA menu] Sanity indisponible, menu statique.", err);
       return getStaticDishes(category, service);
