@@ -5,12 +5,10 @@
 
   const SANITY_CATEGORIES = ["formules", "entrees", "plats", "desserts", "cocktails"];
   const DISH_CACHE = Object.create(null);
-  const FALLBACK_IMAGES = {
-    formules: { src: "images/table-assiettes.jpg", title: "Formules" },
-    entrees: { src: "images/roule-betteraves.jpg", title: "Entrées" },
-    plats: { src: "images/burger-frites.jpg", title: "Plats" },
-    desserts: { src: "images/mousse-speculoos.jpg", title: "Desserts" },
-    cocktails: { src: "images/cocktails.jpg", title: "Cocktails" },
+  // Une seule photo par menu ; un clic sur un plat qui a sa photo dans Sanity l'affiche à la place.
+  const SERVICE_IMAGES = {
+    soir: { src: "images/croquettes.jpg", title: "Menu du soir" },
+    midi: { src: "images/table-burger.jpg", title: "Menu midi" },
   };
 
   let currentService = "soir";
@@ -30,20 +28,12 @@
     const root = window.CHABADA_STATIC_MENU;
     if (!root || !root[service]) return [];
     const list = root[service][category];
-    return Array.isArray(list) ? list : [];
-  }
-
-  // Plat sans photo dans Sanity : on reprend la photo du site (menu en dur) s'il y en a une.
-  // Une photo ajoutée dans Sanity reste prioritaire.
-  function withLocalImage(dish) {
-    if (dish.imageUrl || !window.CHABADA_STATIC_MENU) return dish;
-    for (const service of Object.values(window.CHABADA_STATIC_MENU)) {
-      for (const list of Object.values(service || {})) {
-        const match = (list || []).find((d) => d.name === dish.name && d.imageUrl);
-        if (match) return Object.assign({}, dish, { imageUrl: match.imageUrl });
-      }
-    }
-    return dish;
+    // Les photos du menu en dur ne sont pas affichées : seules celles de Sanity le sont.
+    return Array.isArray(list)
+      ? list.map(function (d) {
+          return Object.assign({}, d, { imageUrl: null });
+        })
+      : [];
   }
 
   // Sanity est la source de la carte ; le menu en dur (menu.static.js) sert de secours,
@@ -61,7 +51,7 @@
       const res = await fetch(url);
       if (!res.ok) throw new Error(`Sanity HTTP ${res.status}`);
       const json = await res.json();
-      return Array.isArray(json.result) ? json.result.map(withLocalImage) : [];
+      return Array.isArray(json.result) ? json.result : [];
     } catch (err) {
       console.warn("[CHABADA menu] Sanity indisponible, menu statique.", err);
       return getStaticDishes(category, service);
@@ -156,30 +146,12 @@
     return article;
   }
 
-  function syncShowcaseFromCache(category) {
-    const dishes = DISH_CACHE[currentService + ":" + category];
-    const withImg = Array.isArray(dishes)
-      ? dishes.filter(function (d) {
-          return d && d.imageUrl;
-        })
-      : [];
-    const primary = withImg[0];
-
-    if (primary) {
-      setShowcase({
-        src: primary.imageUrl,
-        title: primary.name || "",
-        alt: primary.name ? `Illustration : ${primary.name}` : "",
-        kicker: "Coup de Cœur",
-      });
-      return;
-    }
-
-    const fallback = FALLBACK_IMAGES[category] || FALLBACK_IMAGES.entrees;
+  function syncShowcaseFromCache() {
+    const image = SERVICE_IMAGES[currentService] || SERVICE_IMAGES.soir;
     setShowcase({
-      src: fallback.src,
-      title: fallback.title,
-      alt: fallback.title,
+      src: image.src,
+      title: image.title,
+      alt: image.title,
       kicker: "La Carte",
     });
   }
@@ -248,7 +220,7 @@
       const on = group.getAttribute("data-cat") === category;
       group.style.display = on ? "" : "none";
     });
-    syncShowcaseFromCache(category);
+    syncShowcaseFromCache();
   }
 
   const run = async function () {
